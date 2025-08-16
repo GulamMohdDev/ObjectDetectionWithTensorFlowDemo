@@ -12,6 +12,9 @@ import android.graphics.SurfaceTexture
 import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
+import android.hardware.camera2.params.OutputConfiguration
+import android.hardware.camera2.params.SessionConfiguration
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
@@ -155,18 +158,35 @@ class ObjectDetectionOnCamera : AppCompatActivity() {
                         cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
                     captureRequest.addTarget(surface)
 
-                    cameraDevice.createCaptureSession(
-                        listOf(surface),
-                        object : CameraCaptureSession.StateCallback() {
-                            override fun onConfigured(p0: CameraCaptureSession) {
-                                p0.setRepeatingRequest(captureRequest.build(), null, null)
-                            }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        val s = SessionConfiguration(
+                            SessionConfiguration.SESSION_REGULAR,
+                            listOf(OutputConfiguration(surface)),
+                            { handler }, // Or a HandlerExecutor
+                            object : CameraCaptureSession.StateCallback() {
+                                // Implement session state callbacks
+                                override fun onConfigureFailed(session: CameraCaptureSession) {}
 
-                            override fun onConfigureFailed(p0: CameraCaptureSession) {
+                                override fun onConfigured(session: CameraCaptureSession) {
+                                    session.setRepeatingRequest(captureRequest.build(), null, null)
+                                }
                             }
-                        },
-                        handler
-                    )
+                        )
+                        cameraDevice.createCaptureSession(s)
+                    } else {
+                        cameraDevice.createCaptureSession(
+                            listOf(surface),
+                            object : CameraCaptureSession.StateCallback() {
+                                override fun onConfigured(p0: CameraCaptureSession) {
+                                    p0.setRepeatingRequest(captureRequest.build(), null, null)
+                                }
+
+                                override fun onConfigureFailed(p0: CameraCaptureSession) {
+                                }
+                            },
+                            handler
+                        )
+                    }
                 }
 
                 override fun onDisconnected(p0: CameraDevice) {

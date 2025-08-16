@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="50dp"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:id="@+id/obj_image"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Detect Object From Gallay with Image"
+                android:gravity="center"
+                android:padding="20dp"
+                android:background="@drawable/button_shape"/>
+
+            <TextView
+                android:id="@+id/obj_camera"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Detect Object From Camera"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"/>
+
+            <TextView
+                android:id="@+id/obj_canvas"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Mark Object On Camera"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"/>
+
+            <TextView
+                android:id="@+id/obj_grayscale"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Convert Image into Grayscale"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_shape"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.realtimeapp
+package com.gm.objectdetectionwithtensorflowdemo.realtimeapp
 
 import android.content.Context
 import android.util.AttributeSet

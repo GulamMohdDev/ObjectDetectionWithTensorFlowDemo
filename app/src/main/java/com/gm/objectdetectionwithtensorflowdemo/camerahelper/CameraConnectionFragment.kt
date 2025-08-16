@@ -30,9 +30,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
-import com.example.realtimeapp.AutoFitTextureView
 import com.gm.objectdetectionwithtensorflowdemo.ClassificationWithCamera
 import com.gm.objectdetectionwithtensorflowdemo.R
+import com.gm.objectdetectionwithtensorflowdemo.realtimeapp.AutoFitTextureView
 import java.util.*
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
