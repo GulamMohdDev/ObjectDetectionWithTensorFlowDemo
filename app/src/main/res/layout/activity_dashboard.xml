@@ -25,6 +25,7 @@
                 android:text="Detect Object From Gallay with Image"
                 android:gravity="center"
                 android:padding="20dp"
+                android:textColor="@color/black"
                 android:background="@drawable/button_shape"/>
 
             <TextView
@@ -36,6 +37,7 @@
                 android:text="Detect Object From Camera"
                 android:gravity="center"
                 android:padding="20dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_shape"/>
 
@@ -48,6 +50,7 @@
                 android:text="Mark Object On Camera"
                 android:gravity="center"
                 android:padding="20dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_shape"/>
 
@@ -60,6 +63,7 @@
                 android:text="Convert Image into Grayscale"
                 android:gravity="center"
                 android:padding="20dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_shape"/>
 

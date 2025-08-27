@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
         return FileProvider.getUriForFile(
             applicationContext,
-            "com.gm.basicopencvwithcamera.fileprovider",
+            "com.gm.objectdetectionwithtensorflowdemo.fileprovider",
             image
         )
     }
