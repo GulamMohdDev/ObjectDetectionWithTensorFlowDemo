@@ -3,19 +3,20 @@
 #include <android/bitmap.h>
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_gm_nativeandroiddemo_MainActivity_stringFromJNI(
+Java_com_gm_objectdetectionwithtensorflowdemo_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Hello from C++";
     return env->NewStringUTF(hello.c_str());
 }
+
 extern "C" JNIEXPORT jint JNICALL
-Java_com_gm_basicopencvwithcamera_MainActivity_add(JNIEnv *env, jobject thiz, jint a, jint b) {
+Java_com_gm_objectdetectionwithtensorflowdemo_MainActivity_add(JNIEnv *env, jobject thiz, jint a, jint b) {
     return a + b;
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_gm_basicopencvwithcamera_GrayscaleImageConversion_convertImageIntoGrayscale(JNIEnv *env,jobject thiz,jintArray bitmapPixels,jint height, jint width) {
+Java_com_gm_objectdetectionwithtensorflowdemo_GrayscaleImageConversion_convertImageIntoGrayscale(JNIEnv *env,jobject thiz,jintArray bitmapPixels,jint height, jint width) {
 
     jint *pixelData = env -> GetIntArrayElements(bitmapPixels, nullptr);
 

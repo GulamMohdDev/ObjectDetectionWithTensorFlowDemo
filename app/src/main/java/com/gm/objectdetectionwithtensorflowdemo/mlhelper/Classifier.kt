@@ -10,8 +10,6 @@ import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 import java.util.*
 
-
-
 class Classifier(assetManager: AssetManager, modelPath: String, labelPath: String, inputSize: Int) {
     private var interpreter: Interpreter
     private var lableList: List<String>
