@@ -158,7 +158,7 @@ class ObjectDetectionOnCamera : AppCompatActivity() {
                         cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
                     captureRequest.addTarget(surface)
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                         val s = SessionConfiguration(
                             SessionConfiguration.SESSION_REGULAR,
                             listOf(OutputConfiguration(surface)),
@@ -173,7 +173,7 @@ class ObjectDetectionOnCamera : AppCompatActivity() {
                             }
                         )
                         cameraDevice.createCaptureSession(s)
-                    } else {
+                    } else {*/
                         cameraDevice.createCaptureSession(
                             listOf(surface),
                             object : CameraCaptureSession.StateCallback() {
@@ -186,7 +186,7 @@ class ObjectDetectionOnCamera : AppCompatActivity() {
                             },
                             handler
                         )
-                    }
+                   // }
                 }
 
                 override fun onDisconnected(p0: CameraDevice) {

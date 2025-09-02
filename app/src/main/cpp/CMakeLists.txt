@@ -27,7 +27,11 @@ project("objectdetectionwithtensorflowdemo")
 # used in the AndroidManifest.xml file.
 add_library(${CMAKE_PROJECT_NAME} SHARED
     # List C/C++ source files with relative paths to this CMakeLists.txt.
-    native-lib.cpp)
+    native-lib.cpp
+    utils/utils_cpp/system_utils.cpp
+    utils/utils_cpp/image_utils.cpp)
+
+include_directories(utils/utils_h)
 
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
@@ -35,4 +39,5 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 target_link_libraries(${CMAKE_PROJECT_NAME}
     # List libraries link to the target library
     android
+    -ljnigraphics
     log)
